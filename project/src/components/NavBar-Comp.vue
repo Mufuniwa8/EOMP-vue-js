@@ -4,7 +4,7 @@
     <router-link class="nav-link" to="/">Home</router-link> 
     <router-link class="nav-link" to="/about">About</router-link>
     <router-link class="nav-link" to="/education">Education</router-link> 
-    <router-link class="nav-link" to="/testimonial">Testimonial</router-link>
+    <router-link class="nav-link" to="/testimonials">Testimonial</router-link>
     <router-link class="nav-link" to="/projects">Projects</router-link> 
     <router-link class="nav-link" to="/contact">Contact</router-link>  
     </div>

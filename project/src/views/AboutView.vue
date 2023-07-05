@@ -164,121 +164,58 @@
               <p class="about-text">email: mufuniwambedzi@gmail.com</p>
             </div>
           </div>
-       <!---end of container--->
+          <!---end of container--->
         </div>
       </div>
-                <div class="container skills ">
-            <div class="row justify-content-evenly g-4">
-              <h2 class="heading-text">My skills</h2>
-              <div class="col-12 col--md-6 col-lg-3">
-                <img
-                  class="container-project2"
-                  src="https://i.postimg.cc/kgrgHzL3/bootstrap-plain-wordmark-logo-icon-146620.png"
-                  alt=""
-                />
-                <div class="text-overlay3">
-                  <h5 class="about-text">Bootstrap</h5>
-                  <p class="about-text">Skilled</p>
-                  <div class="h3 text-center about-text">90%</div>
+      <div class="container skills">
+        <div class="row justify-content-evenly g-4" v-for="skill in skills" :key="skill.id">
+          <h2 class="heading-text">My skills</h2>
+          <div>
+            <div class="col-3 col--md-3 col-lg-3">
+              <img
+                class="container-project2"
+                :src="skill.image"
+                :alt="skill.title"
+              />
+              <div class="text-overlay3">
+                <h5 class="about-text">{{ skill.title }}</h5>
+                <p class="about-text">{{ skill.skill }}</p>
+                <div class="h3 text-center about-text">
+                  {{ skill.percentage }}
+                </div>
+                <div
+                  class="progress w-100"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow="90%"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
                   <div
-                    class="progress w-100"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="90%"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div
-                      class="progress-bar progress-bar-striped progress-bar-animated"
-                      style="width: 90%"
-                    ></div>
-                  </div>
+                    class="progress-bar progress-bar-striped progress-bar-animated"
+                    style="width: 90%"
+                  ></div>
                 </div>
               </div>
-              <div class="col-12 col--md-6 col-lg-3">
-                <img
-                  class="container-project2"
-                  src="https://i.postimg.cc/vTf83mPg/Java-Script-Symbol.png"
-                  alt=""
-                />
-                <div class="text-overlay3">
-                  <h5 class="about-text">Java Script</h5>
-                  <p class="about-text">Skilled</p>
-                  <div class="h3 text-center about-text">60%</div>
-                  <div
-                    class="progress w-100"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="60%"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div
-                      class="progress-bar progress-bar-striped progress-bar-animated"
-                      style="width: 60%"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col--md-6 col-lg-3">
-                <img
-                  class="container-project2"
-                  src="https://i.postimg.cc/sDDsBySJ/HTML5-1-Color-Black.png"
-                  alt=""
-                />
-                <div class="text-overlay3">
-                  <h5 class="about-text">HTML</h5>
-                  <p class="about-text">Skilled</p>
-                  <div class="h3 text-center about-text">78%</div>
-                  <div
-                    class="progress w-100"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="78%"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div
-                      class="progress-bar progress-bar-striped progress-bar-animated"
-                      style="width: 78%"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col--md-6 col-lg-3">
-                <img
-                  class="container-project2"
-                  src="https://i.postimg.cc/2y39x24c/css3-logo-png-transparent.png"
-                  alt=""
-                />
-                <div class="text-overlay3">
-                  <h5 class="about-text">CSS</h5>
-                  <p class="about-text">Skilled</p>
-                  <div class="h3 text-center about-text">86%</div>
-                  <div
-                    class="progress w-100"
-                    role="progressbar"
-                    aria-label="Animated striped example"
-                    aria-valuenow="86%"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div
-                      class="progress-bar progress-bar-striped progress-bar-animated"
-                      style="width: 86%"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    skills() {
+      return this.$store.state.skills;
+    },
+  },
+  mounted() {
+    this.$store.dispatch("fetchSkills");
+  },
+}
 </script>
 
 <style scoped>
@@ -311,12 +248,11 @@ export default {};
   margin: 5px;
 }
 .conatainer {
-  width:200px;
-  height:auto;
+  width: 200px;
+  height: auto;
 }
 
 .container-project2 {
- 
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -341,7 +277,6 @@ export default {};
   background-size: cover;
 }
 .text-overlay3 {
-  
   width: 200px;
   height: 200px;
   position: relative;

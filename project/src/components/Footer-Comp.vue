@@ -3,9 +3,9 @@
 <div class="footer-container">
     <div class="footer">
    <p>
-    <router-link class="e.g">Contact</router-link>
-    <router-link class="e.g">Home</router-link>
-    <router-link class="e.g">About</router-link>
+    <router-link class="e.g" to="/contact">Contact</router-link>
+    <router-link class="e.g" to="/">Home</router-link>
+    <router-link class="e.g" to="/about">About</router-link>
    </p>
     </div>
 </div>
