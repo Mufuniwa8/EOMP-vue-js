@@ -167,54 +167,13 @@
           <!---end of container--->
         </div>
       </div>
-      <div class="container skills">
-        <div class="row justify-content-evenly g-4" v-for="skill in skills" :key="skill.id">
-          <h2 class="heading-text">My skills</h2>
-          <div>
-            <div class="col-3 col--md-3 col-lg-3">
-              <img
-                class="container-project2"
-                :src="skill.image"
-                :alt="skill.title"
-              />
-              <div class="text-overlay3">
-                <h5 class="about-text">{{ skill.title }}</h5>
-                <p class="about-text">{{ skill.skill }}</p>
-                <div class="h3 text-center about-text">
-                  {{ skill.percentage }}
-                </div>
-                <div
-                  class="progress w-100"
-                  role="progressbar"
-                  aria-label="Animated striped example"
-                  aria-valuenow="90%"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    style="width: 90%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    skills() {
-      return this.$store.state.skills;
-    },
-  },
-  mounted() {
-    this.$store.dispatch("fetchSkills");
-  },
+  
 }
 </script>
 
@@ -233,6 +192,7 @@ export default {
     width: 100%;
   }
 }
+
 .heading-text {
   color: white;
   font-size: 90px;
@@ -243,10 +203,7 @@ export default {
   height: 550px;
   object-fit: cover;
 }
-.skills {
-  padding: 5px;
-  margin: 5px;
-}
+
 .conatainer {
   width: 200px;
   height: auto;
@@ -266,36 +223,6 @@ export default {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
-
-.container-project2 {
-  /* background-color: black; */
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.text-overlay3 {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  top: -200px;
-  display: flex;
-  flex-direction: column;
-  /* Text Positioning */
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background-color: rgba(18, 31, 147, 1);
-  color: white;
-  opacity: 0;
-  transition: 1s;
-}
-.text-overlay3:hover {
-  opacity: 1;
-}
-
 .background {
   background-color: rgba(2, 48, 71, 1);
 }

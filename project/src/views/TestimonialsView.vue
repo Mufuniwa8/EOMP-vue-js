@@ -6,20 +6,20 @@
           <p class="heading-text">Testimonials</p>
         </h1>
       </div>
-      <div class="container">
+      <div class="container colu-grid">
         <div v-for="testimonial in testimonials" :key="testimonial.id" class="row" >
           <div>
-            <div class="col-12 col-md-6 col-lg-3" >
-              <div class="card mb-3">
+            <div class="col-12 col-md-6 col-lg-3 " >
+              <div class="card mb-3 ">
                 <img
                   :src="testimonial.image"
                   :alt="testimonial.name"
                   class="card-img-top"
                   style="height: 450px"
                 />
-                <div class="card-body" style="height: 210px">
-                  <h5 class="card-title">{{ testimonial.name }}</h5>
-                  <p class="card-text">
+                <div class="card-body " style="height: 210px">
+                  <h5 class="card-title name-text">{{ testimonial.name }}</h5>
+                  <p class="card-text test-text">
                     {{ testimonial.desc }}
                   </p>
                 </div>
@@ -48,6 +48,40 @@ export default {
 <style scoped>
 .row {
   display: row;
+}
+.name-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: larger;
+  color: white;
+}
+.test-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  color: white;
+}
+.heading-text {
+  color: white;
+  font-size: 90px;
+  font-family: "Courier New", Courier, monospace;
+}
+.colu-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 40px;
+  transition: 1s;
+  
+}
+
+.card {
+width: 255px;
+background-color: grey;
+}
+.card:hover {
+  transition: 1s;
+  width: 290px;
+}
+.card-img-top {
+  object-fit: cover;
 }
 .text-animation {
   overflow: hidden;
