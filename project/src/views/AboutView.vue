@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-5 background rounded-8">
+  <div class=" background rounded-8">
     <div class="container-fluid py-5">
       <div class="text-center">
         <h1 class="display-5 p-5 text-fw-bold text-animation">
@@ -53,61 +53,61 @@
                   />
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Welcome to my slide show</h5>
-                    <p class="about-text">
+                    <p class="about-txt">
                       Welcome to my slide show where you get<br />
                       to learn about Mufuniwa's Life outside coding.
                     </p>
                   </div>
                 </div>
-                <div class="carousel-item active">
+                <div class="carousel-item">
                   <img
                     src="https://i.postimg.cc/qMhyp8ms/IMG-0561.jpg"
                     alt="..."
                     class="about-img"
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <p class="about-text">
+                    <p class="about-txt">
                       I sometimes take photos when i <br />have nothing to do
                       and im starting to like it.
                     </p>
                   </div>
                 </div>
-                <div class="carousel-item active">
+                <div class="carousel-item ">
                   <img
                     src="https://i.postimg.cc/rmqyPLHn/IMG-1603.jpg"
                     alt="..."
                     class="about-img"
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <p class="about-text">
+                    <p class="about-txt">
                       I play Football as a hobby. Tuesday<br />
                       and Thursdays are days of training then on <br />Saturdays
                       is mostly match days.
                     </p>
                   </div>
                 </div>
-                <div class="carousel-item active">
+                <div class="carousel-item ">
                   <img
                     src="https://i.postimg.cc/QMfpYZkX/HQSY1794.jpg"
                     alt="..."
                     class="about-img"
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <p class="about-text">
+                    <p class="about-txt">
                       Outside everything i like taking<br />
                       trips with my family which i enjoy a lot.
                     </p>
                   </div>
                 </div>
-                <div class="carousel-item active">
+                <div class="carousel-item">
                   <img
                     src="https://i.postimg.cc/zD64290S/IMG-0197.jpg"
                     alt="..."
                     class="about-img"
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <h3 class="about-text">End of my Slideshow</h3>
-                    <p class="about-text">
+                    <h3 class="about-txt">End of my Slideshow</h3>
+                    <p class="about-txt">
                       Thank you for coming this.<br />
                       Hope you enjoyed my Slideshow😊<br />
                       and stay blessed.
@@ -223,7 +223,30 @@ export default {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
+.about-txt {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+}
 .background {
   background-color: rgba(2, 48, 71, 1);
+}
+@media only screen and (max-width: 300px) {
+  .about-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.heading-text {
+  color: white;
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
+.about {
+  color: white;
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
 }
 </style>

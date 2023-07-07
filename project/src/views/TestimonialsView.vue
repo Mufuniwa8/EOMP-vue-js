@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-5 background rounded-8">
+  <div class=" background rounded-8">
     <div class="container-fluid py-5">
       <div class="text-center">
         <h1 class="display-5 p-5 text-fw-bold text-animation">
@@ -9,7 +9,6 @@
       <div class="container colu-grid">
         <div v-for="testimonial in testimonials" :key="testimonial.id" class="row" >
           <div>
-            <div class="col-12 col-md-6 col-lg-3 " >
               <div class="card mb-3 ">
                 <img
                   :src="testimonial.image"
@@ -29,7 +28,7 @@
         </div>
       </div>
     </div>
-  </div> 
+   
 </template>
 
 <script>
@@ -99,5 +98,37 @@ background-color: grey;
 }
 .background {
   background-color: rgba(2, 48, 71, 1);
+}
+
+
+@media only screen and (max-width: 700px) {
+  .colu-grid {
+  display: grid;
+  grid-template-columns: auto auto ;
+  gap: 40px;
+  transition: 1s;
+}
+.heading-text {
+  color: white;
+  font-size: 80px;
+  font-family: "Courier New", Courier, monospace;
+}
+}
+@media only screen and (max-width: 300px) {
+  .colu-grid {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 40px;
+  transition: 1s;
+}
+.heading-text {
+  color: white;
+  font-size:30px;
+  font-family: "Courier New", Courier, monospace;
+}
+.card:hover {
+  transition: 1s;
+  width: 270px;
+}
 }
 </style>

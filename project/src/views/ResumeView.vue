@@ -1,51 +1,61 @@
 <template>
-  <div class="mb-5 background rounded-8">
+  <div class=" background rounded-8">
     <div class="container-fluid py-5">
       <div class="text-center">
         <h1 class="display-5 p-5 text-fw-bold text-animation">
-          <p class="heading-text">Education</p>
+          <p class="heading-text">Resume</p>
         </h1>
       </div>
-      <div v-for="educations in education" :key="educations.id">
-        <ul>
-          <li :style="'--accent-color:' + educations.color">
-            <div class="date text-edu" :class="{'text-black': educations.color == 'white'}">{{ educations.year }}</div>
-            <div id="1" class="descr">
-              <p class="text-edu">
-                {{ educations.desc }}
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <h5 class="heading-text">My skills</h5>
-      <div class="container skills skills-colu">
-        <div class="row justify-content-evenly g-4" v-for="skill in skills" :key="skill.id">
-          <div>
-            <div class="col-3 col--md-3 col-lg-3 skill-container">
-              <img
-                class="container-project2"
-                :src="skill.image"
-                :alt="skill.title"
-              />
-              <div class="text-overlay3">
-                <h5 class="about-text">{{ skill.title }}</h5>
-                <p class="about-text">{{ skill.skill }}</p>
-                <div class="h3 text-center about-text">
-                  {{ skill.percentage }}
-                </div>
-                <div
-                  class="progress w-100"
-                  role="progressbar"
-                  aria-label="Animated striped example"
-                  aria-valuenow="90%"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6 con-div">
+            <h3 class="heading-text">Education</h3>
+            <div v-for="educations in education" :key="educations.id">
+              <ul>
+                <li :style="'--accent-color:' + educations.color">
                   <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    style="width: 90%"
-                  ></div>
+                    class="date text-edu"
+                    :class="{ 'text-black': educations.color == 'white' }"
+                  >
+                    {{ educations.year }}
+                  </div>
+                  <div id="1" class="descr">
+                    <p class="text-edu">
+                      {{ educations.desc }}
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 container">
+            <h3 class="heading-text">My skills</h3>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                  <div
+                    class="container skills skills-colu col-12 col-md-6 col-lg-6"
+                  >
+                    <div
+                      class="row justify-content-evenly g-4"
+                      v-for="skill in skills"
+                      :key="skill.id"
+                    >
+                      <div>
+                        <div class="col-12 col-md-6 col-lg-6 skill-container">
+                          <img
+                            class="container-project2"
+                            :src="skill.image"
+                            :alt="skill.title"
+                          />
+                          <div class="text-overlay3">
+                            <h5 class="about-text">{{ skill.title }}</h5>
+                            <p class="about-text">{{ skill.skill }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,6 +84,11 @@ export default {
 </script>
 
 <style>
+.con-div {
+  padding-right: 90px;
+  width: 590px;
+  /* border: 2xp solid white; */
+}
 .text-animation {
   overflow: hidden;
   animation: typing 3s backwards;
@@ -90,6 +105,7 @@ export default {
 }
 .heading-text {
   color: white;
+  text-align: center;
   font-size: 90px;
   font-family: "Courier New", Courier, monospace;
 }
@@ -222,6 +238,11 @@ ul li .descr::before {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.about-text {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
 .skills-colu {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -267,4 +288,28 @@ ul li .descr::before {
   opacity: 1;
 }
 
+@media only screen and (max-width: 300px) {
+  .skills-colu {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 5px;
+    gap: 5px;
+    width: 150px;
+  }
+  .heading-text {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
+}
+@media only screen and (min-width: 700px) {
+  .skills-colu {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    gap: 10px;
+    width: 150px;
+  }
+}
 </style>

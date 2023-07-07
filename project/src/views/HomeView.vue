@@ -9,7 +9,7 @@
 
   
 
-<div class="mb-5 background rounded-8 ">
+<div class=" background rounded-8 ">
       <div class="container-fluid  py-5">
         <div class="text-center">
           <h1 class="display-5 p-5 text-fw-bold text-animation">
@@ -92,5 +92,27 @@ export default {
 .background {
   background-color: rgba(2, 48, 71, 1);
 }
-
+@media only screen and (max-width: 300px) {
+  .home-image {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 5px 5px rgba(18, 31, 147, 1);
+}
+.heading-text {
+  color: white;
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
+}
+@media only screen and (min-width: 700px) {
+  .home-image {
+  width: 350px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 5px 5px rgba(18, 31, 147, 1);
+}
+}
 </style>
